@@ -42,7 +42,7 @@ module.exports = function (grunt) {
         tasks: ['cssmin', 'shell']
       },
       js: {
-        files: ['src/js/**/.js'],
+        files: ['src/js/*.js'],
         tasks: ['uglify', 'shell']
       },
       html: {
