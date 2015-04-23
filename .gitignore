@@ -1,0 +1,6 @@
+src/css/main.min.css
+src/js/main.min.js
+bower_components
+node_modules
+npm-debug.log
+_site
