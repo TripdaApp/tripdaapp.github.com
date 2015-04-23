@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>{{site.title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Core Meta Data -->
+  <meta name="description" content="{{ site.description }}">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Data -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:site_name" content="{{site.title}}">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="src/css/main.min.css" media="screen">
+</head>
+<body>
+
+  <header id="header">
+    <h1 class="project-name">{{site.title}}</h1>
+    <h2 class="project-tagline">Open source software powered by people than trying change the world.</h2>
+  </header>
+
+  <section class="container">
+    {{content}}
+  </section>
+  <footer id="footer">
+    <span class="site-footer-credits">This website is hosted by <a href="https://github.com">GitHub</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+  </footer>
+  <script src="src/js/main.min.js"></script>
+</body>
+</html>
+
