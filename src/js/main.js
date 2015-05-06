@@ -18,7 +18,6 @@ function parseCollection (collection, template) {
 }
 
 function parseTemplate (data, template) {
-    console.log("Data", data);
     var html;
     if (template === 'members') {
         html = String(members).replace('#image', data.avatar_url)
