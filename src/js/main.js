@@ -3,6 +3,14 @@ var members = '<li>' +
             '<a href="#link">@#name</a>' +
             '</li>';
 
+var repos = '<li class="#language">' +
+            '<h2>#title</h2>' +
+            '<small>#language</small>' +
+            '<p class="description">#description</p>' +
+            '<a href="#link">View project</a>' +
+            '</li>';
+
+
 function parseCollection (collection, template) {
     if (!collection.length || !template) {
         return false;
@@ -27,7 +35,11 @@ function parseTemplate (data, template) {
     }
 
     if (template === 'repos') {
-
+        html = String(repos).replace('#title', data.name)
+            .replace('#language', data.language)
+            .replace('#description', data.description)
+            .replace('#link', data.html_url)
+            .replace('#language', data.language);
     }
 
     return html;
@@ -36,7 +48,10 @@ function parseTemplate (data, template) {
 
 jQuery(document).ready(function($) {
     $.get('https://api.github.com/orgs/tripdaapp/repos', function(data) {
-        console.log("Repos", data);
+        var repos = parseCollection(data, 'repos');
+        var list = $('#projects-list');
+        list.append(repos);
+        list.fadeIn(1000);
     });
 
     $.get('https://api.github.com/orgs/tripdaapp/public_members', function(data) {
